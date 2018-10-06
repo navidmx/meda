@@ -32,13 +32,13 @@
                     <div class="col-md-3 text-center">
                         <img src="https://randomuser.me/api/portraits/men/39.jpg" class="profile-picture">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 text-center">
                         <h1 class="field-full-name">{name}</h1>
                         <h3>DOB</h3>
                         <p id="field-sex">{dob}</p>
                     </div>
-                    <div class="col-md-3">
-                        <button type="button" onclick="handoff('840184656')" data-toggle="modal" data-target="#QRModal">Handoff</button>
+                    <div class="col-md-3 text-center">
+                        <button class="btn handoff-button" type="button" onsubmit="handoff('840184656')" data-toggle="modal" data-target="#QRModal"><i class="fas fa-qrcode"></i> HANDOFF</button>
                     </div>
                 </div>
             </div>

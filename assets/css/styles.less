@@ -2,6 +2,8 @@
 
 @light-gray: #f8f9fa;
 @pink: #d8acca;
+@light-pink: #f1acdb;
+@dark-pink: #f78cd5;
 @purple: #a82ea4;
 
 html,
@@ -71,6 +73,17 @@ a {
     }
 }
 
+.handoff-button {
+    display: inline-block;
+    font-size: 20px;
+    background-color: @light-pink;
+    padding: 20px;
+    border-radius: 10px;
+    &:hover, &:focus {
+        background-color: @dark-pink;
+    }
+}
+
 .profile-picture {
     vertical-align: middle;
     height: 150px;
@@ -79,6 +92,12 @@ a {
 
 .content-hidden {
     display: none;
+}
+
+.content-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .content-bottom {
