@@ -30,14 +30,14 @@ function login() {
     var user = $("#inputEmail").val();
     if (user == "gabriel@upmc.com") {
         console.log("Success");
-        window.location.replace(window.location+"/../pages/doctor.html");
+        window.location.replace(window.location + "/../pages/doctor.html");
     } else if (user == "emma@upmc.com") {
-        window.locatgion.replace(window.location+"/../pages/surgeon.html");
+        window.locatgion.replace(window.location + "/../pages/surgeon.html");
     } else if (user == "jacob@upmc.com") {
-        window.location.replace(window.location+"/../pages/nurse.html");
+        window.location.replace(window.location + "/../pages/nurse.html");
     } else if (user == "janet.smith@example.com") {
-        window.location.replace(window.location+"/../pages/patient.html");
-    }else {
+        window.location.replace(window.location + "/../pages/patient.html");
+    } else {
         $("#inputEmail").val("");
         $("#inputPassword").val("");
         $("#incorrectPassword").html("Incorrect email or password. Please try again!");
@@ -54,17 +54,16 @@ function generateQr(divElement, outputURL, size = 512) {
         text: outputURL,
         width: size,
         height: size,
-        colorDark : "#000000",
-        colorLight : "#ffffff",
-        correctLevel : QRCode.CorrectLevel.H
+        colorDark: "#000000",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.H
     });
     divElement.childNodes[1].setAttribute("style", "margin: auto")
-
     return qrcode;
 }
 
 // example usage: generateQr($("#qrcode")[0], "hi");
 
-function handoff(ims){
+function handoff(ims) {
     generateQr($("#qrcode")[0], ims, 320);
 }
