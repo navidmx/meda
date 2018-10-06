@@ -26,22 +26,28 @@ function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.substring(1, str.length);
 }
 
+function updateRole() {
+    $("#current-role").html(`Signed in as ` + Cookies.get('name') + ` <span id="role-tag">` + Cookies.get('role') + `</span>`);
+}
+
 function login() {
     var user = $("#inputEmail").val();
     if (user == "gabriel@upmc.com") {
-        console.log("Success");
+        Cookies.set("name", "Gabriel Rasskin", { path: '/' });
+        Cookies.set("role", "DOCTOR", { path: '/' });
         window.location.replace(window.location + "/../pages/doctor.html");
     } else if (user == "emma@upmc.com") {
-        window.locatgion.replace(window.location + "/../pages/surgeon.html");
+        Cookies.set("name", "Emma Wenger", { path: '/' });
+        Cookies.set("role", "SURGEON", { path: '/' });
+        window.location.replace(window.location + "/../pages/doctor.html");
     } else if (user == "jacob@upmc.com") {
-        window.location.replace(window.location + "/../pages/nurse.html");
-    } else if (user == "janet.smith@example.com") {
-        window.location.replace(window.location + "/../pages/patient.html");
+        Cookies.set("name", "Jacob Dill", { path: '/' });
+        Cookies.set("role", "NURSE", { path: '/' });
+        window.location.replace(window.location + "/../pages/doctor.html");
     } else {
         $("#inputEmail").val("");
         $("#inputPassword").val("");
         $("#incorrectPassword").html("Incorrect email or password. Please try again!");
-        console.log("Failure");
     }
 }
 
