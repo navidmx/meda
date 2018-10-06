@@ -67,3 +67,8 @@ function generateQr(divElement, outputURL, size = 512) {
 function handoff(ims) {
     generateQr($("#qrcode")[0], window.location + "../pages/patient.html?mrn=" + ims, 320);
 }
+
+function fillFields(snap) {
+    console.log(snap.personalInfo.name)
+    $('.')
+}

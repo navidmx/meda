@@ -197,6 +197,7 @@
         var person = database.ref().child(mrn);      
         person.on('value', snap => {
           console.log(snap.val());
+          fillFields(snap.val());
         });
         //var mrn = window.location
 //        var mrn = get url param
