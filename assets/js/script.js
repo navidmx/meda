@@ -27,9 +27,17 @@ function capitalize(str) {
 }
 
 function login() {
-    if ($("#inputEmail").val() == "navid@upmc.com" && $("#inputPassword").val() == "test123") {
+    var user = $("#inputEmail").val();
+    if (user == "gabriel@upmc.com") {
         console.log("Success");
-    } else {
+        window.location.replace(window.location+"/../pages/doctor.html");
+    } else if (user == "emma@upmc.com") {
+        window.locatgion.replace(window.location+"/../pages/surgeon.html");
+    } else if (user == "jacob@upmc.com") {
+        window.location.replace(window.location+"/../pages/nurse.html");
+    } else if (user == "janet.smith@example.com") {
+        window.location.replace(window.location+"/../pages/patient.html");
+    }else {
         $("#inputEmail").val("");
         $("#inputPassword").val("");
         $("#incorrectPassword").html("Incorrect email or password. Please try again!");
