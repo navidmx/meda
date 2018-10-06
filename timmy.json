@@ -1,0 +1,56 @@
+{
+  "840184656" : {
+  	"personalInfo":
+  	{
+  		"name": "Timmy Smith",
+  		"phone": "202-555-0182",
+  		"sex": "Male",
+  		"email": "janet.smith@example.com",
+  		"DOB": "2008-04-01T12:59:18Z",
+  		"address": "4478 Highfield Road",
+  		"img": "https://images.pexels.com/photos/220574/pexels-photo-220574.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=128&w=128"
+  	},
+  	"insurance" : {
+  		"insuranceName": "Oxford Healthcare",
+  		"number": "3942321",
+  		"subscriberName": "Timmy Smith",
+  		"responsiblePartyName": "Janet Smith",
+  		"memberNumber": "080423587",
+  		"responsiblePartyName": "202-555-0182" 
+  	},
+  	"medical": {
+  		"Dose Wt" : "15 kg",
+  		"LOS" : "30 hrs",
+  		"LOC" : "7c 0744 p",
+  		"allergies" : "NKA",
+    	"diagnosis" : "Dehydration",
+    	"labs48hr" : "...",
+    	"medication" : "DSW 0.9%",
+    	"problem" : "Dehydration",
+    	"rad48hr" : "..."
+  	},
+    "vitals" : {
+		"DBP" : {
+		"max" : 68,
+		"min" : 68
+		},
+		"HR" : {
+		"max" : 100,
+		"min" : 100
+		},
+		"RR" : {
+		"max" : 12,
+		"min" : 12
+		},
+		"SBP" : {
+		"max" : 92,
+		"min" : 92
+		},
+		"T" : {
+		"max" : 37.8,
+		"min" : 37.8
+		},
+	"notes": ""
+    }
+  }
+}
