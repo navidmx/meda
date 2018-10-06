@@ -69,6 +69,6 @@ function handoff(ims) {
 }
 
 function fillFields(snap) {
-    console.log(snap.personalInfo.name)
-    $('.')
+    console.log(snap.personalInfo)
+    $('.field-full-name').text(snap.personalInfo.name);
 }
