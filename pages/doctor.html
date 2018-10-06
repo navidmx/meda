@@ -35,7 +35,9 @@
                         <img src="https://i.imgur.com/SPeTsUk.jpg" class="profile-picture">
                     </div>
                     <div class="col-md-6 text-center">
-                        <a href=""><h1 class="field-full-name">Timmy Smith</h1></a>
+                        <a href="">
+                            <h1 class="field-full-name">Timmy Smith</h1>
+                        </a>
                         <h3>DOB</h3>
                         <p id="field-sex">April 1, 2008</p>
                     </div>
@@ -45,7 +47,6 @@
                 </div>
             </div>
         </div>
-        <div class="control-group"></div>
         <!-- MODAL -->
         <div class="modal fade" id="QRModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -69,7 +70,7 @@
     <script src="../assets/js/script.js"></script>
     <script>
         updateRole();
-        
+
         var config = {
             apiKey: "AIzaSyBEDFmJ4wRfyool-Ugarnema2_hZOg2lhg",
             authDomain: "meda-cmu.firebaseapp.com",
@@ -83,19 +84,19 @@
         var patients = database.ref().child(Cookies.get("name"));
         patients.on('value', snap => {
             x = snap.val().split(" ");
-            for(i in x){
+            for (i in x) {
                 database.ref().child(x[i]).once('value', snap => {
                     console.log(snap.val());
                 });
             }
 
         });
-
-        <div class="card">
+        $(".container").append(
+            `<div class="card">
             <div class="card-block">
                 <div class="row content-top">
                     <div class="col-md-3 text-center">
-                        <img src="https://i.imgur.com/SPeTsUk.jpg" class="profile-picture">
+                        <img src="` +  + `" class="profile-picture">
                     </div>
                     <div class="col-md-6 text-center">
                         <a href=""><h1 class="field-full-name">Timmy Smith</h1></a>
@@ -107,11 +108,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-//        person.on('value', snap => {
-//            console.log(snap.val());
-//            fillFields(snap.val());
-//        });
+        </div>`);
+
     </script>
 </body>
 
