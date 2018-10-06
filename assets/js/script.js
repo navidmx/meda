@@ -144,4 +144,10 @@ function fillFields(snap) {
     $('.field-allergies').text(snap.medical.allergies);
     $('.field-labs').text(snap.medical.labs48hr);
     $('.field-rad').text(snap.medical.rad48hr);
+
+    $('#doctor-notes').text(snap.notes);
+
+    $('#doctor-notes').change(st => {
+        window.databaseFire.ref().child(window.mrn).update({text: $('#doctor-notes').val()})
+    })
 }
