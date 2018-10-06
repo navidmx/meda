@@ -71,5 +71,10 @@ function generateQr(divElement, outputURL, size = 512) {
 // example usage: generateQr($("#qrcode")[0], "hi");
 
 function handoff(ims) {
-    generateQr($("#qrcode")[0], ims, 320);
+    generateQr($("#qrcode")[0], window.location + "../pages/patient.html?mrn=" + ims, 320);
+}
+
+function fillFields(snap) {
+    console.log(snap.personalInfo)
+    $('.field-full-name').text(snap.personalInfo.name);
 }
