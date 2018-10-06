@@ -1,0 +1,21 @@
+{
+    "adults": [
+        {
+            "name": "Cindy Davenport",
+            "img": "cindy_davenport.jpg",
+            "sex": "Female",
+            "dob": "1990-08-06",
+            "address": {
+                "street": "1030 Morewood Avenue",
+                "city": "Pittsburgh",
+                "state": "PA",
+                "zip": "15213"
+            },
+            "email": "cdavenport@gmail.com",
+            "height": `5' 3"`,
+            "weight": "135",
+            "hairColor": "Blonde",
+            "bloodType": "A+"
+        }
+    ]
+}
