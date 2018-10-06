@@ -96,4 +96,11 @@ function fillFields(snap) {
     $('.field-member-number').text(snap.insurance.MemberNumber);
     $('.field-group-number').text(snap.insurance.number);
     $('.field-responsible-party').text(snap.personalInfo.address);
+
+    $('.field-ht').text(snap.vitals.HT[snap.vitals.HT.length - 1]);
+    $('.field-wt').text(snap.vitals.WT[snap.vitals.WT.length - 1]);
+    $('.field-bp').text(snap.vitals.BP[snap.vitals.BP.length - 1]);
+    $('.field-hr').text(snap.vitals.HR[snap.vitals.HR.length - 1]);
+    $('.field-rr').text(snap.vitals.RR[snap.vitals.RR.length - 1]);
+    $('.field-bt').text(snap.vitals.BT[snap.vitals.BT.length - 1]);
 }
