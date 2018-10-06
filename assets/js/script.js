@@ -148,6 +148,6 @@ function fillFields(snap) {
     $('#doctor-notes').text(snap.notes);
 
     $('#doctor-notes').change(st => {
-        window.databaseFire.ref().child(window.mrn).update({text: $('#doctor-notes').val()})
+        window.databaseFire.ref().child(window.mrn).update({notes: $('#doctor-notes').val()})
     })
 }
