@@ -35,11 +35,30 @@
                         <img src="https://i.imgur.com/SPeTsUk.jpg" class="profile-picture">
                     </div>
                     <div class="col-md-6 text-center">
-                        <a href="">
+                        <a href="http://gabriels-mbp.wv.cc.cmu.edu:8000/pages/patient.html?mrn=840184656">
                             <h1 class="field-full-name">Timmy Smith</h1>
                         </a>
                         <h3>DOB</h3>
                         <p id="field-sex">April 1, 2008</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <button class="btn handoff-button" type="button" onclick="handoff('840184656')" data-toggle="modal" data-target="#QRModal"><i class="fas fa-qrcode"></i> HANDOFF</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-block">
+                <div class="row content-top">
+                    <div class="col-md-3 text-center">
+                        <img src="" class="profile-picture">
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <a href="http://gabriels-mbp.wv.cc.cmu.edu:8000/pages/patient.html?mrn=320174151">
+                            <h1 class="field-full-name">Jane Madel</h1>
+                        </a>
+                        <h3>DOB</h3>
+                        <p id="field-sex">May 1, 2007</p>
                     </div>
                     <div class="col-md-3 text-center">
                         <button class="btn handoff-button" type="button" onclick="handoff('840184656')" data-toggle="modal" data-target="#QRModal"><i class="fas fa-qrcode"></i> HANDOFF</button>
@@ -85,30 +104,31 @@
         patients.on('value', snap => {
             x = snap.val().split(" ");
             for (i in x) {
-                database.ref().child(x[i]).once('value', snap => {
-                    console.log(snap.val());
-                });
-            }
-
-        });
-        $(".container").append(
+                database.ref().child(x[i]).once('value', rap => {
+                    console.log(rap.val());
+                    $(".container").append(
             `<div class="card">
             <div class="card-block">
                 <div class="row content-top">
                     <div class="col-md-3 text-center">
-                        <img src="` +  + `" class="profile-picture">
+                        <img src="` + rap.personalInfo.img + `" class="profile-picture">
                     </div>
                     <div class="col-md-6 text-center">
-                        <a href=""><h1 class="field-full-name">Timmy Smith</h1></a>
+                        <a href=""><h1 class="field-full-name">` + rap.personalInfo.name + `</h1></a>
                         <h3>DOB</h3>
-                        <p id="field-sex">April 1, 2008</p>
+                        <p id="field-sex">` + rap.personalInfo.sex + `</p>
                     </div>
                     <div class="col-md-3 text-center">
-                        <button class="btn handoff-button" type="button" onclick="handoff('840184656')" data-toggle="modal" data-target="#QRModal"><i class="fas fa-qrcode"></i> HANDOFF</button>
+                        <button class="btn handoff-button" type="button" onclick="handoff(` + i + `)" data-toggle="modal" data-target="#QRModal"><i class="fas fa-qrcode"></i> HANDOFF</button>
                     </div>
                 </div>
             </div>
         </div>`);
+                });
+            }
+
+        });
+        
 
     </script>
 </body>
