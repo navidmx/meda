@@ -92,37 +92,37 @@
             <div class="card-block">
                 <div class="row content-top text-center">
                     <div class="col-md-2">
-                        <button class="vital-button" style="background-color: #ff8a8a">
+                        <button class="vital-button" style="background-color: #ff8a8a" onclick="showGraph('HT')" data-toggle="modal" data-target="#graphModal">
                             <h3>HT</h3>
                             <p class="field-ht">{field}</p>
                         </button>
                     </div>
                     <div class="col-md-2">
-                        <button class="vital-button" style="background-color: #ffae8a">
+                        <button class="vital-button" style="background-color: #ffae8a" onclick="showGraph('WT')" data-toggle="modal" data-target="#graphModal">
                             <h3>WT</h3>
                             <p class="field-wt">{field}</p>
                         </button>
                     </div>
                     <div class="col-md-2">
-                        <button class="vital-button" style="background-color: #ffed8a">
+                        <button class="vital-button" style="background-color: #ffed8a" onclick="showGraph('BT')" data-toggle="modal" data-target="#graphModal">
                             <h3>BT</h3>
                             <p class="field-bt">{field}</p>
                         </button>
                     </div>
                     <div class="col-md-2">
-                        <button class="vital-button" style="background-color: #8fff8a">
+                        <button class="vital-button" style="background-color: #8fff8a" onclick="showGraph('BP')" data-toggle="modal" data-target="#graphModal">
                             <h3>BP</h3>
                             <p class="field-bp">{field}</p>
                         </button>
                     </div>
                     <div class="col-md-2">
-                        <button class="vital-button" style="background-color: #8af2ff">
+                        <button class="vital-button" style="background-color: #8af2ff" onclick="showGraph('HR')" data-toggle="modal" data-target="#graphModal">
                             <h3>HR</h3>
                             <p class='field-hr'>{field}</p>
                         </button>
                     </div>
                     <div class="col-md-2">
-                        <button class="vital-button" style="background-color: #8aa1ff">
+                        <button class="vital-button" style="background-color: #8aa1ff" onclick="showGraph('RR')" data-toggle="modal" data-target="#graphModal">
                             <h3>RR</h3>
                             <p class='field-rr'>{field}</p>
                         </button>
@@ -186,6 +186,17 @@
                 </div>
             </div>
         </div>
+        <!-- MODAL -->
+        <div class="modal fade" id="graphModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div id="graph"></div>
+                        <canvas id="myChart" width="100" height="50"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- JS Libraries -->
@@ -194,6 +205,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="../assets/js/script.js"></script>
     <script>

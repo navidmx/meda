@@ -33,16 +33,28 @@ function updateRole() {
 function login() {
     var user = $("#inputEmail").val();
     if (user == "gabriel@upmc.com") {
-        Cookies.set("name", "Gabriel Rasskin", { path: '/' });
-        Cookies.set("role", "DOCTOR", { path: '/' });
+        Cookies.set("name", "Gabriel Rasskin", {
+            path: '/'
+        });
+        Cookies.set("role", "DOCTOR", {
+            path: '/'
+        });
         window.location.replace(window.location + "/../pages/doctor.html");
     } else if (user == "emma@upmc.com") {
-        Cookies.set("name", "Emma Wenger", { path: '/' });
-        Cookies.set("role", "SURGEON", { path: '/' });
+        Cookies.set("name", "Emma Wenger", {
+            path: '/'
+        });
+        Cookies.set("role", "SURGEON", {
+            path: '/'
+        });
         window.location.replace(window.location + "/../pages/doctor.html");
     } else if (user == "jacob@upmc.com") {
-        Cookies.set("name", "Jacob Dill", { path: '/' });
-        Cookies.set("role", "NURSE", { path: '/' });
+        Cookies.set("name", "Jacob Dill", {
+            path: '/'
+        });
+        Cookies.set("role", "NURSE", {
+            path: '/'
+        });
         window.location.replace(window.location + "/../pages/doctor.html");
     } else {
         $("#inputEmail").val("");
@@ -74,17 +86,43 @@ function handoff(ims) {
     generateQr($("#qrcode")[0], window.location + "../pages/patient.html?mrn=" + ims, 320);
 }
 
+function showGraph() {
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [{
+                label: "Height",
+                borderColor: 'rgb(255, 99, 132)',
+                data: [56, 67, 38],
+                fill: false
+        }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+        }]
+            }
+        }
+    });
+
+}
+
 function fillFields(snap) {
 
     $('.field-full-name').text(snap.personalInfo.name);
     console.log(snap.personalInfo.DOB);
-    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]; 
-    const d = new Date(snap.personalInfo.DOB); 
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const d = new Date(snap.personalInfo.DOB);
     var date = monthNames[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
     console.log(date);
 
     //console.log(date)
-    
+
     $('.profile-picture').attr('src', snap.personalInfo.img);
     $('.field-sex').text(snap.personalInfo.sex);
     $('.field-dob').text(date);
