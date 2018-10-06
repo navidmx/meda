@@ -86,7 +86,9 @@ function handoff(ims) {
     generateQr($("#qrcode")[0], window.location + "../pages/patient.html?mrn=" + ims, 320);
 }
 
-function showGraph() {
+function showGraph(type, color) {
+    console.log(window.personData);
+    var vitalData = window.personData.vitals[type];
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'line',
@@ -94,19 +96,10 @@ function showGraph() {
             labels: ["January", "February", "March", "April", "May", "June", "July"],
             datasets: [{
                 label: "Height",
-                borderColor: 'rgb(255, 99, 132)',
-                data: [56, 67, 38],
+                borderColor: color,
+                data: vitalData,
                 fill: false
         }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-        }]
-            }
         }
     });
 
@@ -141,4 +134,14 @@ function fillFields(snap) {
     $('.field-hr').text(snap.vitals.HR[snap.vitals.HR.length - 1]);
     $('.field-rr').text(snap.vitals.RR[snap.vitals.RR.length - 1]);
     $('.field-bt').text(snap.vitals.BT[snap.vitals.BT.length - 1]);
+
+    $('.field-dose').text(snap.medical['Dose Wt']);
+    $('.field-loc').text(snap.medical.LOC);
+    $('.field-los').text(snap.medical.LOS);
+    $('.field-problem').text(snap.medical.problem);
+    $('.field-diagnosis').text(snap.medical.diagnosis);
+    $('.field-medication').text(snap.medical.medication);
+    $('.field-allergies').text(snap.medical.allergies);
+    $('.field-labs').text(snap.medical.labs48hr);
+    $('.field-rad').text(snap.medical.rad48hr);
 }

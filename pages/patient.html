@@ -133,41 +133,29 @@
         <div class="card">
             <div class="card-block">
                 <div class="row content-top text-center">
-                    <div class="col-sm-2">
-                        <h3>KEY</h3>
-                        <p>{field}</p>
-                        <h3>KEY</h3>
-                        <p>{field}</p>
+                    <div class="col-sm-3">
+                        <h3>Dose Wt.</h3>
+                        <p class="field-dose">{field}</p>
+                        <h3>LOC</h3>
+                        <p class="field-loc">{field}</p>
+                        <h3>LOS</h3>
+                        <p class="field-los">{field}</p>
                     </div>
-                    <div class="col-sm-2">
-                        <h3>KEY</h3>
-                        <p>{field}</p>
-                        <h3>KEY</h3>
-                        <p>{field}</p>
+                    <div class="col-sm-3">
+                        <h3>problem</h3>
+                        <p class="field-problem">{field}</p>
+                        <h3>diagnosis</h3>
+                        <p class="field-diagnosis">{field}</p>
+                        <h3>medication</h3>
+                        <p class="field-medication">{field}</p>
                     </div>
-                    <div class="col-sm-2">
-                        <h3>KEY</h3>
-                        <p>{field}</p>
-                        <h3>KEY</h3>
-                        <p>{field}</p>
-                    </div>
-                    <div class="col-sm-2">
-                        <h3>KEY</h3>
-                        <p>{field}</p>
-                        <h3>KEY</h3>
-                        <p>{field}</p>
-                    </div>
-                    <div class="col-sm-2">
-                        <h3>KEY</h3>
-                        <p>{field}</p>
-                        <h3>KEY</h3>
-                        <p>{field}</p>
-                    </div>
-                    <div class="col-sm-2">
-                        <h3>KEY</h3>
-                        <p>{field}</p>
-                        <h3>KEY</h3>
-                        <p>{field}</p>
+                    <div class="col-sm-3">
+                        <h3>allergies</h3>
+                        <p class="field-allergies">{field}</p>
+                        <h3>Labs 48hrs</h3>
+                        <p class="field-labs">{field}</p>
+                        <h3>Rad 48hrs</h3>
+                        <p class="field-rad">{field}</p>
                     </div>
                 </div>
             </div>
@@ -231,6 +219,9 @@
         var person = database.ref().child(mrn);
         person.on('value', snap => {
             console.log(snap.val());
+            
+            window.personData = snap.val();
+            console.log(window.personData)
             fillFields(snap.val());
         });
         //var mrn = window.location
