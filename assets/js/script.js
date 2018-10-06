@@ -2,7 +2,7 @@ const monthNames = ["January", "February", "March", "April", "May", "June", "Jul
 
 $.getJSON("https://randomuser.me/api/", function (json) {
     var data = json.results[0];
-    console.log(data);
+    console.log(JSON.stringify(data));
     var d = new Date(data.dob.date);
     var date = monthNames[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
     $(".profile-picture").attr("src", data.picture.large);
