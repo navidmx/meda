@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MEDA - Patient</title>
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet/less" type="text/css" href="../assets/css/styles.less">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <img src="../assets/img/logo-text.png" height="50" class="center" alt="">
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="subtext" id="current-role">Signed in as Gabriel Rasskin <span id="role-tag">DOCTOR</span></p>
+                <a href="../index.html"><span class="subtext-two">Sign Out <i class="fas fa-sign-out-alt"></i></span></a>
+                <h1><span class="field-full-name">Current Patients</span></h1>
+                <hr>
+            </div>
+        </div>
+        <!-- YOUR PROFILE -->
+        <div class="card">
+            <div class="card-block">
+                <div class="row content-top">
+                    <div class="col-md-3 text-center">
+                        <img src="https://i.imgur.com/SPeTsUk.jpg" class="profile-picture">
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <a href="../pages/patient.html?mrn=840184656">
+                            <h1 class="field-full-name">Timmy Smith</h1>
+                        </a>
+                        <h3>DOB</h3>
+                        <p id="field-sex">April 1, 2008</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <button class="btn handoff-button" type="button" onclick="handoff('840184656')" data-toggle="modal" data-target="#QRModal"><i class="fas fa-qrcode"></i> HANDOFF</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-block">
+                <div class="row content-top">
+                    <div class="col-md-3 text-center">
+                        <img src="https://i.imgur.com/IPtrfuT.jpg" class="profile-picture">
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <a href="../pages/patient.html?mrn=320174151">
+                            <h1 class="field-full-name">Jane Madel</h1>
+                        </a>
+                        <h3>DOB</h3>
+                        <p id="field-sex">May 1, 2007</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <button class="btn handoff-button" type="button" onclick="handoff('320174151')" data-toggle="modal" data-target="#QRModal"><i class="fas fa-qrcode"></i> HANDOFF</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- MODAL -->
+        <div class="modal fade" id="QRModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div id="qrcode"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Libraries -->
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../assets/js/script.js"></script>
+    <script>
+        updateRole();
+
+        var config = {
+            apiKey: "AIzaSyBEDFmJ4wRfyool-Ugarnema2_hZOg2lhg",
+            authDomain: "meda-cmu.firebaseapp.com",
+            databaseURL: "https://meda-cmu.firebaseio.com",
+            projectId: "meda-cmu",
+            storageBucket: "meda-cmu.appspot.com",
+            messagingSenderId: "347532732833"
+        };
+        firebase.initializeApp(config);
+        var database = firebase.database();
+        var patients = database.ref().child(Cookies.get("name"));
+        patients.on('value', snap => {
+            x = snap.val().split(" ");
+            for (i in x) {
+                database.ref().child(x[i]).once('value', rap => {
+                    console.log(rap.val());
+                    $(".container").append(
+            `<div class="card">
+            <div class="card-block">
+                <div class="row content-top">
+                    <div class="col-md-3 text-center">
+                        <img src="` + rap.personalInfo.img + `" class="profile-picture">
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <a href=""><h1 class="field-full-name">` + rap.personalInfo.name + `</h1></a>
+                        <h3>DOB</h3>
+                        <p id="field-sex">` + rap.personalInfo.sex + `</p>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <button class="btn handoff-button" type="button" onclick="handoff(` + i + `)" data-toggle="modal" data-target="#QRModal"><i class="fas fa-qrcode"></i> HANDOFF</button>
+                    </div>
+                </div>
+            </div>
+        </div>`);
+                });
+            }
+
+        });
+        
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>MEDA - Patient</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet/less" type="text/css" href="../assets/css/styles.less">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <img src="../assets/img/logo-text.png" height="50" class="center" alt="">
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p class="subtext" id="current-role">Signed in as Gabriel Rasskin <span id="role-tag">DOCTOR</span></p>
+                <a href="doctor.html"><span class="subtext-two"><i class="fas fa-chevron-left"></i> Back to Patients</span></a> | <a href="../index.html"><span class="subtext-two">Sign Out <i class="fas fa-sign-out-alt"></i></span></a>
+                <h1><span class="field-full-name">{name}</span></h1>
+                <hr>
+            </div>
+        </div>
+        <!-- YOUR PROFILE -->
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Patient Profile</h2>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-block">
+                <div class="row content-top">
+                    <div class="col-md-4 text-center">
+                        <img src="" class="profile-picture">
+                    </div>
+                    <div class="col-md-4">
+                        <h3>NAME</h3>
+                        <p class="field-full-name"></p>
+                        <h3>SEX</h3>
+                        <p class="field-sex"></p>
+                        <h3>DOB</h3>
+                        <p class="field-dob"></p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>PHONE <i class="fas fa-edit editable"></i></h3>
+                        <p class="field-phone"></p>
+                        <h3>EMAIL <i class="fas fa-edit editable"></i></h3>
+                        <p><a class="field-email" href="mailto:{email}"></a></p>
+                        <h3>ADDRESS <i class="fas fa-edit editable"></i></h3>
+                        <p class="field-address"></p>
+                    </div>
+                </div>
+                <div class="row content-hidden">
+                    <div class="col-md-4 offset-md-4" style="padding-top: 20px;">
+                        <h3>EYE COLOR <i class="fas fa-edit"></i></h3>
+                        <p>Brown</p>
+                    </div>
+                    <div class="col-md-4" style="padding-top: 20px;">
+                        <h3>HAIR COLOR <i class="fas fa-edit"></i></h3>
+                        <p>Brown</p>
+                    </div>
+                    <!-- INSURANCE -->
+                    <div class="col-md-4 text-center" style="padding-top: 0 20px;">
+                        <h2>Insurance</h2>
+                    </div>
+                    <div class="col-md-4" style="padding-top: 20px;">
+                        <h3>PLAN NAME <i class="fas fa-edit editable"></i></h3>
+                        <p class='field-plan-name'></p>
+                        <h3>SUBSCRIBER NAME <i class="fas fa-edit editable"></i></h3>
+                        <p class="field-full-name"></p>
+                        <h3>MEMBER NUMBER <i class="fas fa-edit editable"></i></h3>
+                        <p class='field-member-number'></p>
+                    </div>
+                    <div class="col-md-4" style="padding-top: 20px;">
+                        <h3>GROUP NUMBER <i class="fas fa-edit editable"></i></h3>
+                        <p class="field-group-number"></p>
+                        <h3>RESPONSIBLE PARTY NAME <i class="fas fa-edit editable"></i></h3>
+                        <p class="field-responsible-party"></p>
+                        <h3>RESPONSIBLE PARTY PHONE <i class="fas fa-edit editable"></i></h3>
+                        <p class="field-phone"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer content-bottom text-center">
+                <h1 class="content-box-arrow"><i class="fas fa-chevron-down"></i></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Primary Vitals</h2>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-block">
+                <div class="row content-top text-center">
+                    <div class="col-md-2">
+                        <button class="vital-button" style="background-color: #ff8a8a" onclick="showGraph('HT', '#ff8a8a')" data-toggle="modal" data-target="#graphModal">
+                            <h3>HT</h3>
+                            <p class="field-ht"></p>
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="vital-button" style="background-color: #ffae8a" onclick="showGraph('WT', '#ffae8a')" data-toggle="modal" data-target="#graphModal">
+                            <h3>WT</h3>
+                            <p class="field-wt"></p>
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="vital-button" style="background-color: #ffed8a" onclick="showGraph('BT', '#ffed8a')" data-toggle="modal" data-target="#graphModal">
+                            <h3>BT</h3>
+                            <p class="field-bt"></p>
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="vital-button" style="background-color: #8fff8a" onclick="showGraph('BP', '#8fff8a')" data-toggle="modal" data-target="#graphModal">
+                            <h3>BP</h3>
+                            <p class="field-bp"></p>
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="vital-button" style="background-color: #8af2ff" onclick="showGraph('HR', '#8af2ff')" data-toggle="modal" data-target="#graphModal">
+                            <h3>HR</h3>
+                            <p class='field-hr'></p>
+                        </button>
+                    </div>
+                    <div class="col-md-2">
+                        <button class="vital-button" style="background-color: #8aa1ff" onclick="showGraph('RR', '#8aa1ff')" data-toggle="modal" data-target="#graphModal">
+                            <h3>RR</h3>
+                            <p class='field-rr'></p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Last Visit</h2>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-block">
+                <div class="row content-top text-center">
+                    <div class="col-sm-3">
+                        <h3>Dose Wt.</h3>
+                        <p class="field-dose"></p>
+                        <h3>LOC</h3>
+                        <p class="field-loc"></p>
+                        <h3>LOS</h3>
+                        <p class="field-los"></p>
+                    </div>
+                    <div class="col-sm-3">
+                        <h3>Problem</h3>
+                        <p class="field-problem"></p>
+                        <h3>Diagnosis</h3>
+                        <p class="field-diagnosis"></p>
+                        <h3>Medication</h3>
+                        <p class="field-medication"></p>
+                    </div>
+                    <div class="col-sm-3">
+                        <h3>Allergies</h3>
+                        <p class="field-allergies"></p>
+                        <h3>Labs 48hrs</h3>
+                        <p class="field-labs"></p>
+                        <h3>Rad 48hrs</h3>
+                        <p class="field-rad"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Notes</h2>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-block">
+                <div class="row content-top text-center">
+                    <div class="col-md-12">
+                        <textarea id="doctor-notes" class="doctor-notes"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Files</h2>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-block">
+                <div class="row content-top text-center">
+                    <div class="col-md-3">
+                        <img class="img-thumbnail" src="https://qph.fs.quoracdn.net/main-qimg-416470f7170b7c9f5bfef6e28032426d">
+                    </div>
+                    <div class="col-md-3">
+                        <img class="img-thumbnail" src="https://wp-assets.futurism.com/2016/03/20140821081352_50300.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- MODAL -->
+        <div class="modal fade" id="graphModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div id="graph"></div>
+                        <canvas id="myChart" width="100" height="50"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Libraries -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../assets/js/script.js"></script>
+    <script>
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+        console.log(getUrlVars());
+        window.mrn = getUrlVars()["mrn"];
+        var config = {
+            apiKey: "AIzaSyBEDFmJ4wRfyool-Ugarnema2_hZOg2lhg",
+            authDomain: "meda-cmu.firebaseapp.com",
+            databaseURL: "https://meda-cmu.firebaseio.com",
+            projectId: "meda-cmu",
+            storageBucket: "meda-cmu.appspot.com",
+            messagingSenderId: "347532732833"
+        };
+        firebase.initializeApp(config);
+        window.databaseFire = firebase.database();
+        var person = window.databaseFire.ref().child(window.mrn);
+        person.once('value', snap => {
+            console.log(snap.val());
+            
+            window.personData = snap.val();
+            console.log(window.personData)
+            fillFields(snap.val());
+        });
+        //var mrn = window.location
+        //        var mrn = get url param
+        //        returnUser(mrn);
+
+    </script>
+    <script>
+        updateRole();
+
+    </script>
+</body>
+
+</html>
