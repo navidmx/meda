@@ -95,7 +95,7 @@ function showGraph(type, color) {
         data: {
             labels: ["January", "February", "March", "April", "May", "June", "July"],
             datasets: [{
-                label: "Height",
+                label: "",
                 borderColor: color,
                 data: vitalData,
                 fill: false
