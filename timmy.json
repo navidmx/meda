@@ -1,6 +1,6 @@
 {
   "840184656" : {
-    "owner": "surgeon",
+    "currentPractitioner": "surgeon",
   	"personalInfo":
   	{
   		"name": "Timmy Smith",
