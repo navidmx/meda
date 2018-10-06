@@ -17,11 +17,68 @@
     <nav class="navbar">
         <img src="../assets/img/logo-text.png" height="50" class="center" alt="">
     </nav>
-    
+
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h1>Test.</h1>
+                <h1><span class="field-full-name">{name}</span></h1>
+                <hr>
+            </div>
+        </div>
+        <!-- YOUR PROFILE -->
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Patient Profile</h2>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-block">
+                <div class="row content-top">
+                    <div class="col-md-4 text-center">
+                        <img src="https://randomuser.me/api/portraits/men/39.jpg" class="profile-picture">
+                    </div>
+                    <div class="col-md-4">
+                        <h3>NAME</h3>
+                        <p class="field-full-name">{name}</p>
+                        <h3>SEX</h3>
+                        <p id="field-sex">{sex}</p>
+                        <h3>DOB</h3>
+                        <p id="field-dob">{dob}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3>PHONE <i class="fas fa-edit editable"></i></h3>
+                        <p class="field-phone">{phone}</p>
+                        <h3>EMAIL <i class="fas fa-edit editable"></i></h3>
+                        <p><a id="field-email" href="mailto:{email}">{email}</a></p>
+                        <h3>ADDRESS <i class="fas fa-edit editable"></i></h3>
+                        <p id="field-address">{address}</p>
+                    </div>
+                </div>
+                <div class="row content-hidden">
+                    <!-- INSURANCE -->
+                    <div class="col-md-4" style="padding-top: 20px;">
+                        <h2>Insurance</h2>
+                    </div>
+                    <div class="col-md-4" style="padding-top: 20px;">
+                        <h3>PLAN NAME <i class="fas fa-edit editable"></i></h3>
+                        <p>Oxford Healthcare</p>
+                        <h3>SUBSCRIBER NAME <i class="fas fa-edit editable"></i></h3>
+                        <p class="field-full-name">{weight}</p>
+                        <h3>MEMBER NUMBER <i class="fas fa-edit editable"></i></h3>
+                        <p>080423587</p>
+                    </div>
+                    <div class="col-md-4" style="padding-top: 20px;">
+                        <h3>GROUP NUMBER <i class="fas fa-edit editable"></i></h3>
+                        <p>3942321</p>
+                        <h3>RESPONSIBLE PARTY NAME <i class="fas fa-edit editable"></i></h3>
+                        <p>Joseph Van Der Beek</p>
+                        <h3>RESPONSIBLE PARTY PHONE <i class="fas fa-edit editable"></i></h3>
+                        <p class="field-phone">{address}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer content-bottom text-center">
+                <h1 class="content-box-arrow"><i class="fas fa-chevron-down"></i></h1>
             </div>
         </div>
     </div>
