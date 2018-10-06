@@ -21,63 +21,35 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h1><span class="field-full-name">{name}</span></h1>
+                <h1><span class="field-full-name">Current Patients</span></h1>
                 <hr>
             </div>
         </div>
         <!-- YOUR PROFILE -->
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Current patients</h2>
-            </div>
-        </div>
         <div class="card">
             <div class="card-block">
                 <div class="row content-top">
                     <div class="col-md-3 text-center">
                         <img src="https://randomuser.me/api/portraits/men/39.jpg" class="profile-picture">
                     </div>
-                    <div class="col-md-3">
-                        <h3>NAME</h3>
-                        <p class="field-full-name">{name}</p>
-                        <h3>SEX</h3>
-                        <p id="field-sex">{sex}</p>
-                    </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
+                        <h1 class="field-full-name">{name}</h1>
                         <h3>DOB</h3>
-                        <p id="field-dob">{dob}</p>
-                        <h3>LOS<i class="fas fa-edit editable"></i></h3>
-                        <p id="field-mrn">{mrn}</p>
+                        <p id="field-sex">{dob}</p>
                     </div>
                     <div class="col-md-3">
-                        <h3>PLEASE ADD BUTTONS: SINGOUT, APPOINTMENTS, D/C INST, D/C MEDICAL RECORDS</h3>
-                        <p id="field-dob">{dob}</p>
+                        <button type="button" onsubmit="handoff()" data-toggle="modal" data-target="#QRModal">Handoff</button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="control-group"></div>
-        <div class="card">
-            <div class="card-block">
-                <div class="row content-top">
-                    <div class="col-md-3 text-center">
-                        <img src="https://randomuser.me/api/portraits/men/39.jpg" class="profile-picture">
-                    </div>
-                    <div class="col-md-3">
-                        <h3>NAME</h3>
-                        <p class="field-full-name">{name}</p>
-                        <h3>SEX</h3>
-                        <p id="field-sex">{sex}</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>DOB</h3>
-                        <p id="field-dob">{dob}</p>
-                        <h3>LOS<i class="fas fa-edit editable"></i></h3>
-                        <p id="field-mrn">{mrn}</p>
-                    </div>
-                    <div class="col-md-3">
-                        <h3>PLEASE ADD BUTTONS: SINGOUT, APPOINTMENTS, D/C INST, D/C MEDICAL RECORDS</h3>
-                        <p id="field-dob">{dob}</p>
+        <!-- MODAL -->
+        <div class="modal fade" id="QRModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        TEST
                     </div>
                 </div>
             </div>
