@@ -69,6 +69,25 @@ function handoff(ims) {
 }
 
 function fillFields(snap) {
-    console.log(snap.personalInfo)
+
     $('.field-full-name').text(snap.personalInfo.name);
+    console.log(snap.personalInfo.DOB);
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ]; 
+    const d = new Date(snap.personalInfo.DOB); 
+    var date = monthNames[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+    console.log(date);
+
+    //console.log(date)
+    
+    $('.profile-picture').attr('src', snap.personalInfo.img);
+    $('.field-sex').text(snap.personalInfo.sex);
+    $('.field-dob').text(date);
+    $('.field-phone').text(snap.personalInfo.phone);
+    $('.field-email').text(snap.personalInfo.email);
+    $('.field-address').text(snap.personalInfo.address);
+
+    $('.field-plan-name').text(snap.insurance.insuranceName);
+    $('.field-member-number').text(snap.insurance.MemberNumber);
+    $('.field-group-number').text(snap.insurance.number);
+    $('.field-responsible-party').text(snap.personalInfo.address);
 }
