@@ -95,7 +95,7 @@ function showGraph(type, color) {
         data: {
             labels: ["January", "February", "March", "April", "May", "June", "July"],
             datasets: [{
-                label: "Height",
+                label: "",
                 borderColor: color,
                 data: vitalData,
                 fill: false
@@ -148,6 +148,8 @@ function fillFields(snap) {
     $('#doctor-notes').text(snap.notes);
 
     $('#doctor-notes').change(st => {
-        window.databaseFire.ref().child(window.mrn).update({notes: $('#doctor-notes').val()})
+        window.databaseFire.ref().child(window.mrn).update({
+            notes: $('#doctor-notes').val()
+        })
     })
 }
