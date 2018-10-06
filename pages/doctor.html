@@ -34,7 +34,7 @@
                         <img src="https://randomuser.me/api/portraits/men/39.jpg" class="profile-picture">
                     </div>
                     <div class="col-md-6 text-center">
-                        <h1 class="field-full-name">{name}</h1>
+                        <a href=""><h1 class="field-full-name">{name}</h1></a>
                         <h3>DOB</h3>
                         <p id="field-sex">{dob}</p>
                     </div>
@@ -62,10 +62,30 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <!-- Custom JS -->
     <script src="../assets/js/script.js"></script>
-    <script>updateRole();</script>
+    <script>
+        updateRole();
+        
+        var config = {
+            apiKey: "AIzaSyBEDFmJ4wRfyool-Ugarnema2_hZOg2lhg",
+            authDomain: "meda-cmu.firebaseapp.com",
+            databaseURL: "https://meda-cmu.firebaseio.com",
+            projectId: "meda-cmu",
+            storageBucket: "meda-cmu.appspot.com",
+            messagingSenderId: "347532732833"
+        };
+        firebase.initializeApp(config);
+        var database = firebase.database();
+        var person = database.ref().getChildren;
+        console.log(person);
+//        person.on('value', snap => {
+//            console.log(snap.val());
+//            fillFields(snap.val());
+//        });
+    </script>
 </body>
 
 </html>
