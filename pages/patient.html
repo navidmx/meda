@@ -85,85 +85,105 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h2>Medical Info</h2>
+                <h2>Primary Vitals</h2>
             </div>
         </div>
         <div class="card">
             <div class="card-block">
-                <div class="row content-top">
-                    <div class="col-md-4 text-center">
-                        <h2>Primary Vitals</h2>
+                <div class="row content-top text-center">
+                    <div class="col-md-2">
+                        <button class="vital-button" style="background-color: #ff8a8a">
+                            <h3>HT</h3>
+                            <p>{field}</p>
+                        </button>
                     </div>
-                    <div class="col-sm-2">
-                        <h3>KEY</h3>
-                        <p>{field}</p>
-                        <h3>KEY</h3>
-                        <p>{field}</p>
+                    <div class="col-md-2">
+                        <button class="vital-button" style="background-color: #ffae8a">
+                            <h3>WT</h3>
+                            <p>{field}</p>
+                        </button>
                     </div>
-                    <div class="col-sm-2">
-                        <h3>KEY</h3>
-                        <p>{field}</p>
-                        <h3>KEY</h3>
-                        <p>{field}</p>
+                    <div class="col-md-2">
+                        <button class="vital-button" style="background-color: #ffed8a">
+                            <h3>BT</h3>
+                            <p>{field}</p>
+                        </button>
                     </div>
-                    <div class="col-sm-2">
-                        <h3>KEY</h3>
-                        <p>{field}</p>
-                        <h3>KEY</h3>
-                        <p>{field}</p>
+                    <div class="col-md-2">
+                        <button class="vital-button" style="background-color: #8fff8a">
+                            <h3>BP</h3>
+                            <p>{field}</p>
+                        </button>
                     </div>
-                    <div class="col-sm-2">
-                        <h3>KEY</h3>
-                        <p>{field}</p>
-                        <h3>KEY</h3>
-                        <p>{field}</p>
+                    <div class="col-md-2">
+                        <button class="vital-button" style="background-color: #8af2ff">
+                            <h3>HR</h3>
+                            <p>{field}</p>
+                        </button>
                     </div>
-                </div>
-                <div class="row content-hidden">
-                    <!-- INSURANCE -->
-                    <div class="col-sm-1">
-                        
-                    </div>
-                    <div class="col-sm-4 text-center" style="padding-top: 0 20px;">
-                        <h2>Last 24 HR Vitals</h2>
-                    </div>
-                    <div class="col-sm-1" style="padding-top: 20px;">
-                        <h3><span>...</span></h3>
-                        <p>MIN</p>
-                        <p>MAX</p>
-                    </div>
-                    <div class="col-sm-1" style="padding-top: 20px;">
-                        <h3>KEY</h3>
-                        <p>{field}</p>
-                        <p>{field}</p>
-                    </div>
-                    <div class="col-sm-1" style="padding-top: 20px;">
-                        <h3>KEY</h3>
-                        <p>{field}</p>
-                        <p>{field}</p>
-                    </div>
-                    <div class="col-sm-1" style="padding-top: 20px;">
-                        <h3>KEY</h3>
-                        <p>{field}</p>
-                        <p>{field}</p>
-                    </div>
-                    <div class="col-sm-1" style="padding-top: 20px;">
-                        <h3>KEY</h3>
-                        <p>{field}</p>
-                        <p>{field}</p>
-                    </div>
-                    <div class="col-sm-1" style="padding-top: 20px;">
-                        <h3>KEY</h3>
-                        <p>{field}</p>
-                        <p>{field}</p>
-                    </div>
-                    <div class="col-sm-1">
-                        
+                    <div class="col-md-2">
+                        <button class="vital-button" style="background-color: #8aa1ff">
+                            <h3>RR</h3>
+                            <p>{field}</p>
+                        </button>
                     </div>
                 </div>
             </div>
-            <div class="card-footer content-bottom text-center">
-                <h1 class="content-box-arrow"><i class="fas fa-chevron-down"></i></h1>
+        </div>
+        <div class="card">
+            <div class="card-block">
+                <div class="row content-top text-center">
+                    <div class="col-sm-2">
+                        <h3>KEY</h3>
+                        <p>{field}</p>
+                        <h3>KEY</h3>
+                        <p>{field}</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <h3>KEY</h3>
+                        <p>{field}</p>
+                        <h3>KEY</h3>
+                        <p>{field}</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <h3>KEY</h3>
+                        <p>{field}</p>
+                        <h3>KEY</h3>
+                        <p>{field}</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <h3>KEY</h3>
+                        <p>{field}</p>
+                        <h3>KEY</h3>
+                        <p>{field}</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <h3>KEY</h3>
+                        <p>{field}</p>
+                        <h3>KEY</h3>
+                        <p>{field}</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <h3>KEY</h3>
+                        <p>{field}</p>
+                        <h3>KEY</h3>
+                        <p>{field}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Notes</h2>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-block">
+                <div class="row content-top text-center">
+                    <div class="col-md-12">
+                        <textarea class="doctor-notes"></textarea>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -179,7 +199,7 @@
     <script>
         function getUrlVars() {
             var vars = {};
-            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
                 vars[key] = value;
             });
             return vars;
@@ -196,16 +216,20 @@
         };
         firebase.initializeApp(config);
         var database = firebase.database();
-        var person = database.ref().child(mrn);      
+        var person = database.ref().child(mrn);
         person.on('value', snap => {
-          console.log(snap.val());
-          fillFields(snap.val());
+            console.log(snap.val());
+            fillFields(snap.val());
         });
         //var mrn = window.location
-//        var mrn = get url param
-//        returnUser(mrn);
+        //        var mrn = get url param
+        //        returnUser(mrn);
+
     </script>
-    <script>updateRole();</script>
+    <script>
+        updateRole();
+
+    </script>
 </body>
 
 </html>
