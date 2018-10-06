@@ -171,9 +171,34 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
     <!-- Custom JS -->
     <script src="../assets/js/script.js"></script>
     <script>
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+        console.log(getUrlVars());
+        var mrn = getUrlVars()["mrn"];
+        var config = {
+            apiKey: "AIzaSyBEDFmJ4wRfyool-Ugarnema2_hZOg2lhg",
+            authDomain: "meda-cmu.firebaseapp.com",
+            databaseURL: "https://meda-cmu.firebaseio.com",
+            projectId: "meda-cmu",
+            storageBucket: "meda-cmu.appspot.com",
+            messagingSenderId: "347532732833"
+        };
+        firebase.initializeApp(config);
+        var database = firebase.database();
+        var person = database.ref().child(mrn);      
+        person.on('value', snap => {
+          console.log(snap.val());
+        });
+        //var mrn = window.location
 //        var mrn = get url param
 //        returnUser(mrn);
     </script>
