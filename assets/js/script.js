@@ -1,19 +1,3 @@
-const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-
-//$.getJSON("https://randomuser.me/api/", function (json) {
-//    var data = json.results[0];
-//    console.log(data);
-//    var d = new Date(data.dob.date);
-//    var date = monthNames[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
-//    $(".profile-picture").attr("src", data.picture.large);
-//    $(".field-full-name").html(capitalize(data.name.first) + " " + capitalize(data.name.last));
-//    $("#field-sex").html(capitalize(data.gender));
-//    $("#field-dob").html(date + " (" + data.dob.age + " years old)");
-//    $(".field-phone").html(data.cell);
-//    $("#field-email").html(data.email);
-//    $("#field-address").html(data.location.street);
-//});
-
 $(".content-bottom").on('click', function () {
     $(this).parent().find((".content-hidden")).slideToggle('medium', function () {
         if ($(this).is(':visible'))
@@ -80,14 +64,11 @@ function generateQr(divElement, outputURL, size = 512) {
     return qrcode;
 }
 
-// example usage: generateQr($("#qrcode")[0], "hi");
-
 function handoff(ims) {
     generateQr($("#qrcode")[0], window.location + "/../pages/patient.html?mrn=" + ims, 320);
 }
 
 function showGraph(type, color) {
-    console.log(window.personData);
     var vitalData = window.personData.vitals[type];
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
@@ -106,15 +87,10 @@ function showGraph(type, color) {
 }
 
 function fillFields(snap) {
-
     $('.field-full-name').text(snap.personalInfo.name);
-    console.log(snap.personalInfo.DOB);
     const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     const d = new Date(snap.personalInfo.DOB);
     var date = monthNames[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
-    console.log(date);
-
-    //console.log(date)
 
     $('.profile-picture').attr('src', snap.personalInfo.img);
     $('.field-sex').text(snap.personalInfo.sex);

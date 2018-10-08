@@ -69,7 +69,9 @@ a {
     width: 100%;
     background-color: #57c5ec;
     border: 0;
-    &:hover, &:focus {
+
+    &:hover,
+    &:focus {
         background-color: #22b5ea;
     }
 }
@@ -80,7 +82,9 @@ a {
     background-color: @light-pink;
     padding: 20px;
     border-radius: 10px;
-    &:hover, &:focus {
+
+    &:hover,
+    &:focus {
         background-color: @dark-pink;
     }
 }
@@ -106,10 +110,12 @@ a {
     padding: 0;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+
     &:hover {
         cursor: pointer;
         background-color: #eee;
     }
+
     transition: background-color .5s;
 }
 
@@ -147,10 +153,13 @@ a {
     width: 100px;
     border-radius: 50%;
     border: 0;
-    &:hover, &:focus {
+
+    &:hover,
+    &:focus {
         cursor: pointer;
         opacity: .8;
     }
+
     transition: opacity .5s;
 }
 
@@ -159,4 +168,12 @@ a {
     height: 150px;
     border: 2px solid #d9abc9;
     border-radius: 10px;
+}
+
+#qrcode {
+    margin: 0 0 20px 0;
+    img {    
+        border: 5px solid @pink;
+        border-radius: 10px;
+    }
 }
